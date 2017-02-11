@@ -11,17 +11,11 @@ int sezar_char(char c , int n){
         return  (c % 97) +n + 97;
 }
 
-//convert str to int
-/*int str_to_int(char* t,int len){
-    if (len == 1)
-        return (int) t;
-    else return (pow(t)t*10^len)+str_to_int();
-}*/
 
+}
 int main(int argc,char *argv[]) {
 
     int somme_arg = 0;
-
     //teste sezar-char
    /* printf("%c \n",sezar_char('f',2));
     printf("%c \n",sezar_char('c',2));
@@ -31,9 +25,11 @@ int main(int argc,char *argv[]) {
 
     //return arg and leng of arg
     for (int i = 1; i <argc ; ++i) {
-        printf("Arg %d :  %s de langueur %d\n",i,argv[i], strlen(argv[i]));
+        printf("Arg %d :  %s de langueur %d\n",i,argv[i], (int)strlen(argv[i]));
+        somme_arg += atoi(argv[i]);
     }
 
+    printf("S =  %d \n",somme_arg);
 
     return 0;
 }
