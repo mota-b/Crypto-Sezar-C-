@@ -38,27 +38,11 @@ int main(int argc,char *argv[]) {
         printf("Closed : %s\n",argv[2]);
 
     }
-
-/*
-    char buffer[]=" ";
-    sprintf(buffer,"Hello");
-
-    printf("we are going to crypte <<Hello>> with the sezar key %s : \n",argv[1]);
-    for (int i = 0,l =(int)strlen(buffer) ; i <l ; ++i) {
-        printf("%c ",sezar_chrypt(buffer[i], atoi(argv[1])) );
+    /*int n = 5;
+    for (int i = 'a'; i <='z' ; ++i) {
+        //printf("%c",i);
+       printf("%c | %c | %c  \n",i,sezar_chrypt(i,n),sezar_de_chrypt(sezar_chrypt(i,n),n));
     }
-    printf("\n");
-
-
-    char buffer1[]=" ";
-    sprintf(buffer1,"jgnnq");
-
-    printf("we are going to de-crypte <<%s>> with the sezar key %s : \n",buffer1,argv[1]);
-    for (int i = 0,l =(int)strlen(buffer) ; i <l ; ++i) {
-        printf("%c ",sezar_de_chrypt(buffer1[i], atoi(argv[1])) );
-    }
-    printf("\n");*/
-
-    return 0;
+    return 0;*/
 }
 
