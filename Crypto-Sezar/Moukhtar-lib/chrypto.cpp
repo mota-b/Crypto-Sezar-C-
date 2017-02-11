@@ -2,7 +2,7 @@
 // Created by px-gnom on 11/02/17.
 //
 
-#include "../headers/chrypto.h"
+#include "chrypto.h"
 
 int sezar_chrypt(char c , int n){
     if (c >= 'A'  && c <= 'Z')
