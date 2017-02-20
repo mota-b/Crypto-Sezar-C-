@@ -5,9 +5,7 @@
 
 #idea
 .idea
-
-#hiden
-.*
+.idea/*
 
 #temp
 *~*

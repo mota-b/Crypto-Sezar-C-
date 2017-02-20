@@ -10,10 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66510821-2bd1-4746-94bc-ac9d771213b6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto-Sezar/code" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crypto-Sezar/chrypted" afterPath="$PROJECT_DIR$/Crypto-Sezar/chrypted" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crypto-Sezar/de-chrypted" afterPath="$PROJECT_DIR$/Crypto-Sezar/de-chrypted" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crypto-Sezar/on_clear" afterPath="$PROJECT_DIR$/Crypto-Sezar/on_clear" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/Crypto-Sezar-C-.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/px_gnom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crypto-Sezar/.gitignore" afterPath="$PROJECT_DIR$/Crypto-Sezar/.gitignore" />
     </list>
     <ignored path="Crypto-Sezar-C-.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +49,8 @@
       <file leaf-file-name="code.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Crypto-Sezar/code.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-207">
-              <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
+            <state relative-caret-position="279">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding>
                 <marker date="1487619767355" expanded="false" signature="774:2285" ph="{...}" />
               </folding>
@@ -125,6 +128,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Crypto-Sezar-C-" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crypto-Sezar-C-" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crypto-Sezar-C-" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -335,12 +348,12 @@
       <updated>1486861537916</updated>
       <workItem from="1486861539655" duration="162000" />
       <workItem from="1487594015403" duration="1021000" />
-      <workItem from="1487613500624" duration="10435000" />
+      <workItem from="1487613500624" duration="12657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11618000" />
+    <option name="totallyTimeSpent" value="13840000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="0" />
@@ -437,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Crypto-Sezar/code.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
+        <state relative-caret-position="279">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding>
             <marker date="1487619767355" expanded="false" signature="774:2285" ph="{...}" />
           </folding>
