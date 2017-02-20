@@ -1,12 +1,53 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
+#include <unistd.h>
 #include "Moukhtar-lib/chrypto.h"
+
+/* Open and work in a file */
+void open_file(FILE* file_src,int argc,char *argv[]);
+
+
+/*Main Class*/
+int main(int argc,char *argv[]) {
+
+
+    if (argc != 5){
+        printf("nbr arg = %d Need more parametters\n"
+                           "Syntax ex : \n\n"
+                           "./code [option -p/-c] [Key] src.txt dest.txt\n",argc);
+
+        return -1;
+    }
+    else{
+
+        //Open file with r/w right]
+        FILE *file_src = NULL;
+        open_file(file_src,argc,argv);
+
+        char a[8+strlen(argv[4])];
+        strcpy(a,"gedit ");
+        strcat(a,argv[4]);
+        strcat(a," &");
+        system(a);
+
+
+        return 0;
+    }
+
+
+
+}
 
 
 /* Open and work in a file */
 void open_file(FILE* file_src,int argc,char *argv[]){
+
+    // Write in the plain texte
+    char a[8+strlen(argv[4])];
+    strcpy(a,"gedit ");
+    strcat(a,argv[3]);
+    system(a);
 
     char buffer ;
     file_src = fopen(argv[3],"r+");
@@ -33,7 +74,6 @@ void open_file(FILE* file_src,int argc,char *argv[]){
                 } while (buffer != EOF);
             }
             else if (strcmp(argv[1],"-p") == 0) {
-                printf(" i am de-chryptig \n");
                 do {
                     fputc(sezar_de_chrypt(buffer,atoi(argv[2])) ,file_dest);
                     buffer = (char)fgetc(file_src);
@@ -50,30 +90,6 @@ void open_file(FILE* file_src,int argc,char *argv[]){
         printf("Closed : %s\n",argv[3]);
 
     }
-
-}
-
-
-/*Main Class*/
-int main(int argc,char *argv[]) {
-
-    if (argc !=5){
-            printf("nbr arg = %d Need more parametters\n"
-                           "Syntax ex : \n\n"
-                           "./code [option -p/-c] [Key] src.txt dest.txt\n",argc);
-    }
-    else{
-
-        //Open file with r/w right
-        FILE *file_src = NULL;
-        open_file(file_src,argc,argv);
-
-    }
-
-
-
-
-    return 0;
 
 }
 
