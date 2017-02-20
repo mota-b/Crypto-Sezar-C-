@@ -5,44 +5,75 @@
 #include "Moukhtar-lib/chrypto.h"
 
 
+/* Open and work in a file */
+void open_file(FILE* file_src,int argc,char *argv[]){
 
-int main(int argc,char *argv[]) {
+    char buffer ;
+    file_src = fopen(argv[3],"r+");
 
-    char c ;
+    // Test if the file is opened
+    if (file_src != NULL) {
+        printf("Opened : %s\n",argv[3]);
+        buffer = (char)fgetc(file_src);
 
-    FILE *f = NULL;
-    f = fopen(argv[2],"r+");
+        // Test if the file is not empty
+        if(buffer != EOF) {
 
-    if (f != NULL) {
-        printf("Opened : %s\n",argv[2]);
-        c = (char)fgetc(f);
+            // Declarate and open File Dest
+            FILE *file_dest = NULL;
+            file_dest = fopen(argv[4], "w");
 
-        if(c != EOF) {
-            FILE *ff = NULL;
-           // FILE *fff = NULL;
-            ff = fopen(argv[3], "r+");
-            //fff = fopen(argv[4], "r+");
 
-            do {
-                fputc(sezar_chrypt(c,atoi(argv[1])) ,ff);// chript fro onClear --> to chrypted
-                //fputc(sezar_de_chrypt((char)fgetc(ff),atoi(argv[1])) ,fff);// de_chrypte from chrypted - to de-chrypted
-                c = (char)fgetc(f);
-            } while (c != EOF);
+            // Read from file1 ---> chrypte/de-Chrypte ---> Write in file2
+            if (strcmp(argv[1],"-c") == 0) {
 
+                do {
+                    fputc(sezar_chrypt(buffer, atoi(argv[2])), file_dest);
+                    buffer = (char) fgetc(file_src);
+                } while (buffer != EOF);
+            }
+            else if (strcmp(argv[1],"-p") == 0) {
+                printf(" i am de-chryptig \n");
+                do {
+                    fputc(sezar_de_chrypt(buffer,atoi(argv[2])) ,file_dest);
+                    buffer = (char)fgetc(file_src);
+                } while (buffer != EOF);
+            }
+            else
+                printf(" Not expected option \n");
         }
         else
             printf("Empty file \n");
 
 
-        fclose(f);
-        printf("Closed : %s\n",argv[2]);
+        fclose(file_src);
+        printf("Closed : %s\n",argv[3]);
 
     }
-    /*int n = 5;
-    for (int i = 'a'; i <='z' ; ++i) {
-        //printf("%c",i);
-       printf("%c | %c | %c  \n",i,sezar_chrypt(i,n),sezar_de_chrypt(sezar_chrypt(i,n),n));
+
+}
+
+
+/*Main Class*/
+int main(int argc,char *argv[]) {
+
+    if (argc !=5){
+            printf("nbr arg = %d Need more parametters\n"
+                           "Syntax ex : \n\n"
+                           "./code [option -p/-c] [Key] src.txt dest.txt\n",argc);
     }
-    return 0;*/
+    else{
+
+        //Open file with r/w right
+        FILE *file_src = NULL;
+        open_file(file_src,argc,argv);
+
+    }
+
+
+
+
+    return 0;
+
 }
 
