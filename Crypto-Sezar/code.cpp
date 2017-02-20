@@ -66,7 +66,6 @@ void open_file(FILE* file_src,int argc,char *argv[]){
 
                 do {
 
-                  // ICI  //fputc(sezar_chrypt(buffer, atoi(argv[2])), file_dest);
                   fputc(sezar_chrypt(buffer, cnvrt_alpha_key(argv[2])), file_dest);
                     buffer = (char) fgetc(file_src);
                 } while (buffer != EOF);
@@ -74,7 +73,6 @@ void open_file(FILE* file_src,int argc,char *argv[]){
             else if (strcmp(argv[1],"-p") == 0) {
                 do {
 
-                  // ICI  //fputc(sezar_de_chrypt(buffer,cnvrt_alpha_key(argv[2]) ,file_dest);
                     fputc(sezar_de_chrypt(buffer,cnvrt_alpha_key(argv[2]) ),file_dest);
                     buffer = (char)fgetc(file_src);
                 } while (buffer != EOF);
