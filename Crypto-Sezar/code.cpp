@@ -1,21 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 #include "Moukhtar-lib/chrypto.h"
 
 /* Open and work in a file */
 void open_file(FILE* file_src,int argc,char *argv[]);
-
 
 /*Main Class*/
 int main(int argc,char *argv[]) {
 
 
     if (argc != 5){
-        printf("nbr arg = %d Need more parametters\n"
-                           "Syntax ex : \n\n"
-                           "./code [option -p/-c] [Key] src.txt dest.txt\n",argc);
+        printf("Syntax ERROR \n\n"
+                           "Ex : ./code [option -p/-c] [Key<number/char>] src.txt dest.txt\n\n");
 
         return -1;
     }
@@ -38,7 +35,6 @@ int main(int argc,char *argv[]) {
 
 
 }
-
 
 /* Open and work in a file */
 void open_file(FILE* file_src,int argc,char *argv[]){
@@ -69,13 +65,17 @@ void open_file(FILE* file_src,int argc,char *argv[]){
             if (strcmp(argv[1],"-c") == 0) {
 
                 do {
-                    fputc(sezar_chrypt(buffer, atoi(argv[2])), file_dest);
+
+                  // ICI  //fputc(sezar_chrypt(buffer, atoi(argv[2])), file_dest);
+                  fputc(sezar_chrypt(buffer, cnvrt_alpha_key(argv[2])), file_dest);
                     buffer = (char) fgetc(file_src);
                 } while (buffer != EOF);
             }
             else if (strcmp(argv[1],"-p") == 0) {
                 do {
-                    fputc(sezar_de_chrypt(buffer,atoi(argv[2])) ,file_dest);
+
+                  // ICI  //fputc(sezar_de_chrypt(buffer,cnvrt_alpha_key(argv[2]) ,file_dest);
+                    fputc(sezar_de_chrypt(buffer,cnvrt_alpha_key(argv[2]) ),file_dest);
                     buffer = (char)fgetc(file_src);
                 } while (buffer != EOF);
             }

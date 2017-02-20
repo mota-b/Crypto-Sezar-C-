@@ -1,8 +1,9 @@
 //
 // Created by px-gnom on 11/02/17.
 //
-
+#include <stdlib.h>
 #include "chrypto.h"
+
 // sezar chrypt
 int sezar_chrypt(char c , int n){
     int base;
@@ -19,6 +20,7 @@ int sezar_chrypt(char c , int n){
 
 }
 
+// sezar de_chrypt
 int sezar_de_chrypt(char c , int n){
     int base;
 
@@ -35,5 +37,22 @@ int sezar_de_chrypt(char c , int n){
         else
             return c;
 
+
+}
+
+/* Convert the string Key to an integer*/
+int cnvrt_alpha_key(char *key){
+
+    char *buffer = key;
+    int base;
+
+    if (buffer[0] >= 'A'  && buffer[0] <= 'Z') /*Maj*/
+        base = 65;
+    else if (buffer[0] >= 'a'  && buffer[0] <= 'z') /*Min*/
+        base = 97;
+    else
+        return atoi(key);
+
+    return buffer[0]-base;
 
 }
